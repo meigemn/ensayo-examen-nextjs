@@ -120,9 +120,7 @@ export async function eliminarMedicina(formData) {
 
 export async function insertarPlanta(formData) {
     const nombre = formData.get('nombre');
-    const jefePlanta = new Date(formData.get('jefePlanta'));
-
-
+    const jefePlanta = formData.get('jefePlanta');
 
     await prisma.planta.create({
         data: {
@@ -135,12 +133,10 @@ export async function insertarPlanta(formData) {
 
 }
 
-
-
 export async function modificarPlanta(formData) {
     const id = Number(formData.get('id'))
     const nombre = formData.get('nombre')
-    const jefePlanta = new Date(formData.get('jefePlanta'))
+    const jefePlanta = formData.get('jefePlanta');
 
 
     await prisma.planta.update({
@@ -155,8 +151,6 @@ export async function modificarPlanta(formData) {
 
     revalidatePath('/plantas')
 }
-
-
 
 export async function eliminarPlanta(formData) {
     const id = Number(formData.get('id'))
