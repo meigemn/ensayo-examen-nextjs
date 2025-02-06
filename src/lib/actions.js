@@ -60,7 +60,7 @@ export async function modificarPaciente(formData) {
     const nombre = formData.get('nombre')
     const fechaNacimiento = new Date(formData.get('fechaNacimiento'))
     const plantaId = Number(formData.get('plantaId'))
-
+   
 
 
     await prisma.paciente.update({
@@ -112,6 +112,7 @@ export async function modificarMedicina(formData) {
     revalidatePath('/medicinas')
 }
 export async function eliminarMedicina(formData) {
+    
     const id = Number(formData.get('id'))
     await prisma.medicina.delete({
         where: {

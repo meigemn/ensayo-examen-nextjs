@@ -8,6 +8,7 @@ function MedicinaEliminar({ medicina }) {
                 <p className="text-lg mb-4">Medicina: <span className="font-semibold">{medicina.nombre}</span></p>
                 <p className="text-lg mb-6">via: <span className="font-semibold">{medicina.via}</span></p>
                 <form action={eliminarMedicina}>
+                    <input type="hidden" name="id" defaultValue={medicina.id} />
                 
                     <div className="flex justify-center space-x-4">
                         <button

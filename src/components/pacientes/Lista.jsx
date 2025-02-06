@@ -1,6 +1,6 @@
 import { obtenerPacientes } from "@/lib/data";
 import Link from "next/link";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modal";
 import PacienteInsertar from "./Insertar";
 import PacienteModificar from "./Modificar";
 import PacienteEliminar from "./Eliminar";
@@ -26,11 +26,11 @@ async function Pacientes() {
                             <div className="flex space-x-2">
                                 {/* Botón Modificar */}
                                 <Modal openElement={<p className="inline-block text-white bg-yellow-500 p-2 rounded-md cursor-pointer hover:bg-yellow-600 transition">Modificar</p>}>
-                                    <PacienteModificar paciente={pacientes} />
+                                    <PacienteModificar paciente={paciente} />
                                 </Modal>
                                 {/* Botón Eliminar */}
                                 <Modal openElement={<p className="inline-block text-white bg-red-600 p-2 rounded-md cursor-pointer hover:bg-red-700 transition">Eliminar</p>}>
-                                    <PacienteEliminar paciente={pacientes} />
+                                    <PacienteEliminar paciente={paciente} />
                                 </Modal>
                             </div>
                         </div>

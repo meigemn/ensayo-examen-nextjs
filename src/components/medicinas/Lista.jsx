@@ -1,6 +1,6 @@
 import { obtenerMedicinas } from "@/lib/data";
 import Link from "next/link";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modal";
 import MedicinaInsertar from "./Insertar";
 import MedicinaModificar from "./Modificar";
 import MedicinaEliminar from "./Eliminar";

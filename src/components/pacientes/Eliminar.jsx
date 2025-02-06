@@ -1,5 +1,11 @@
 import { eliminarPaciente } from "@/lib/actions";
 function PacienteEliminar({ paciente }) {
+    const formatDate = (date) => {
+        if (!date) return '';
+        const d = new Date(date);
+        return d.toISOString().split('T')[0];
+    };
+    console.log(paciente);
     return (
 
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
@@ -7,7 +13,7 @@ function PacienteEliminar({ paciente }) {
                 <h1 className="text-2xl text-red-600 font-bold mb-4 text-center">¿Desea eliminar los siguientes datos?</h1>
                 
                 <p className="text-lg mb-4">Paciente: <span className="font-semibold">{paciente.nombre}</span></p>
-                <p className="text-lg mb-6">Fecha de Nacimiento: <span className="font-semibold">{paciente.fechaNacimiento}</span></p>
+                <p className="text-lg mb-6">Fecha de Nacimiento: <span className="font-semibold">{formatDate(paciente.fechaNacimiento)}</span></p>
                 <form action={eliminarPaciente}>
                     <input type="hidden" name="id" defaultValue={paciente.id} />
                     <div className="flex justify-center space-x-4">
